@@ -16,7 +16,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "phaser": "3.22.x"
+  },
   "devDependencies": {
     "copy-webpack-plugin": "5.1.x",
     "jest": "25.3.x",
