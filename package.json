@@ -20,6 +20,12 @@
     "phaser": "3.22.x"
   },
   "devDependencies": {
+    "@types/copy-webpack-plugin": "5.0.x",
+    "@types/node": "13.13.x",
+    "@types/terser-webpack-plugin": "2.2.x",
+    "@types/webpack": "4.41.x",
+    "@types/webpack-bundle-analyzer": "2.13.x",
+    "@types/webpack-dev-server": "3.10.x",
     "copy-webpack-plugin": "5.1.x",
     "jest": "25.3.x",
     "jest-extended": "0.11.5",
