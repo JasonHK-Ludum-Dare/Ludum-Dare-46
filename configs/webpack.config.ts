@@ -5,7 +5,7 @@ import "webpack-dev-server";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import {
     isBoolean,
-    isString,
+    isObject,
 } from "lodash";
 import Path from "path";
 import TerserWebpackPlugin from "terser-webpack-plugin";
@@ -20,9 +20,9 @@ const DIRECTORY_DIST = Path.resolve(DIRECTORY_ROOT, "./dist");
 const DIRECTORY_SRC = Path.resolve(DIRECTORY_ROOT, "./src");
 const DIRECTORY_SRC_GAME = Path.resolve(DIRECTORY_SRC, "./game");
 
-function ConfigurationFactory(env: string | Record<string, string | number | boolean>, argv: Webpack.CliConfigOptions): Webpack.Configuration
+function ConfigurationFactory(env: string | Record<string, string | number | boolean> | undefined, argv: Webpack.CliConfigOptions): Webpack.Configuration
 {
-    if (isString(env)) { env = {}; }
+    if (!isObject(env)) { env = {}; }
 
     const isProduction: boolean = isBoolean(env.production) ? env.production : false;
 
