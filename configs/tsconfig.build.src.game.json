@@ -1,0 +1,13 @@
+{
+    "extends": "./tsconfig.build.json",
+    "compilerOptions": {
+        "rootDir": "../src",
+        "lib": [
+            "DOM",
+            "ES2015",
+        ],
+    },
+    "include": [
+        "../src/game/**/*.ts",
+    ],
+}
