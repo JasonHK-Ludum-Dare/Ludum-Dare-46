@@ -26,7 +26,7 @@ function ConfigurationFactory(env: string | Record<string, string | number | boo
 
     const isProduction: boolean = isBoolean(env.production) ? env.production : false;
 
-    const enableWatch: boolean = isBoolean(env.watch) ? env.watch : !isProduction;
+    const enableWatch: boolean = isBoolean(env.watch) ? env.watch : false;
     const enableSourceMap: boolean = isBoolean(env.sourceMap) ? env.sourceMap : !isProduction;
 
     const enableBundleAnalyzer: boolean = isBoolean(env.analyze) ? env.analyze : !isProduction;
@@ -70,14 +70,14 @@ function ConfigurationFactory(env: string | Record<string, string | number | boo
             new CopyWebpackPlugin(
                 [
                     { from: "src/index.html", to: "index.html" },
-                    { from: "assets/manifest.json", to: "." },
-                    { from: "assets/icons/favicon.ico", to: "." },
-                    {
-                        from: "assets/icons/",
-                        to: "icons",
-                        ignore: ["*.svg", "favicon.ico"],
-                    },
-                    { from: "assets/masks/safari.svg", to: "icons" },
+                    // { from: "assets/manifest.json", to: "." },
+                    // { from: "assets/icons/favicon.ico", to: "." },
+                    // {
+                    //     from: "assets/icons/",
+                    //     to: "icons",
+                    //     ignore: ["*.svg", "favicon.ico"],
+                    // },
+                    // { from: "assets/masks/safari.svg", to: "icons" },
                 ]),
         ],
         optimization: {
